@@ -2,7 +2,7 @@
 title: "FPL Dashie"
 author: "Will Miller"
 date: '`r format(Sys.Date(), "%d-%B-%Y")`'
-output: rmarkdown::github_document
+output: rmarkdown::html_document
 ---
 
 #FPL Dashboard 2019/20
