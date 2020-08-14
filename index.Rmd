@@ -13,7 +13,7 @@ library(data.table)
 library(plotly)
 library(ggthemes) # Load
 
-setwd("~/Documents/FPL/2019")
+setwd("~/fpl")
 
 #cleaning up data
 
