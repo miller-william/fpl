@@ -1,6 +1,6 @@
 #Analysis of Fantasy Premier League data 
 
-setwd("~/Documents/FPL/2019")
+setwd("~/fpl")
 
 library(ggplot2)
 library(tidyverse)

@@ -1,6 +1,6 @@
 #Code to scrape Fantasy Premier League API for team data
 
-setwd("~/Documents/FPL/2019")
+setwd("~/fpl")
 
 #Loading packages
 library('rvest')
