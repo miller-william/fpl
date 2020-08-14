@@ -1,13 +1,16 @@
+#Analysis of Fantasy Premier League data 
+
 setwd("~/Documents/FPL/2019")
 
 library(ggplot2)
 library(tidyverse)
 
+#importing web scraped Fantasy Football data
 data <- read.csv('data.csv')
+
+#removing players not on chat and removing blank Covid-19 Gameweeks
 drop_names <- c('Josh','Alex','Luke')
 drop_weeks <- c(30:38)
-
-#removing boys not on chat and removing blank covid Gameweeks
 
 main <- filter(data,!(player_name %in% drop_names) ) %>%
         filter(!(current.event %in% drop_weeks))
@@ -17,8 +20,7 @@ for(i in 1:length(main$current.event)){
     main[i,"current.event"] <- main[i,"current.event"]-9}
 }
 
-
-#making scot gap data
+#Making various 'gap' data
 
 wide_points <- select(main,player_name,current.event, current.total_points) %>%
                 spread(player_name,current.total_points)
@@ -33,10 +35,8 @@ wide_points$zac_leader <- -(wide_points$leader - wide_points$Zac)
 wide_points$tom_leader <- -(wide_points$leader - wide_points$Tom)
 
 
-
 #reformatting value
 main$current.value <- main$current.value/10
-
 
 #transfers made
 
@@ -59,6 +59,8 @@ b_points <- select(main,player_name, current.points_on_bench) %>%
 summary(main$player_name)
 
 str(data)
+
+#Create charts for whatsapp group
 
 p <- ggplot(main,aes(x=current.event,y=current.total_points)) + geom_line(aes(color=player_name)) + theme_bw()
 
