@@ -4,8 +4,10 @@ author: "Will Miller"
 date: 'Last updated: `r format(Sys.Date(), "%d-%B-%Y")`'
 output: html_document
 ---
+
 <br>
 <a href="index.html">Home</a>
+
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
