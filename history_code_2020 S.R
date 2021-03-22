@@ -8,8 +8,8 @@ library('rvest')
 library("jsonlite")
 
 #Player_lookup
-name <- c('Zac','Tom','Josh','Scot','Paddy','Luke','Alex')
-code <- c('29649','345408','4871937','555634','172179','3136901','3528506')
+#name <- c('Zac','Tom','Josh','Scot','Paddy','Luke','Alex')
+#code <- c('29649','345408','4871937','555634','172179','3136901','3528506')
 
 name <- c('Gray','Daisy','Curt','HarryM','Charlie','Harriet','HarryB','Tom','Joe')
 code <- c('2337150','4173915','2808893','1534451','3529644','2187963','2197544','4789785','3250312')

@@ -10,7 +10,7 @@ data <- read.csv('data.csv')
 
 #removing players not on chat and removing blank Covid-19 Gameweeks
 drop_names <- c('Josh','Alex','Luke')
-drop_weeks <- c(30:38)
+drop_weeks <- c(22)
 
 main <- filter(data,!(player_name %in% drop_names) ) %>%
         filter(!(current.event %in% drop_weeks))
@@ -19,7 +19,7 @@ for(i in 1:length(main$current.event)){
   if(main[i,"current.event"] >=39){
     main[i,"current.event"] <- main[i,"current.event"]-9}
 }
-
+main <- data
 #Making various 'gap' data
 
 wide_points <- select(main,player_name,current.event, current.total_points) %>%
@@ -135,3 +135,7 @@ wide_GWpoints$zac_ <- (wide_GWpoints$zac - wide_GWpoints$leader)
 
 p <- ggplot(wide_GWpoints, aes(x=gap_high_low)) + geom_histogram(binwidth = 5) + xlab('Max gap made up in a gameweek (5 point bins)') + ylab('Count')
 print(p)
+
+
+
+
