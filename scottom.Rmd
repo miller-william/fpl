@@ -33,7 +33,7 @@ max_GW <- max(df$Gameweek)
 
 GWleader <- subset(df,Gameweek==max_GW)
 firstGW <- max(GWleader$Gameweek_points)
-GWleader <- subset(df, Gameweek_points==firstGW)
+GWleader <- subset(GWleader, Gameweek_points==firstGW)
 
 #get max number of transfers
 df2 <- df %>%
@@ -58,7 +58,7 @@ tp <- as.numeric(leader$Total_points)
 ##Overview
 
 `r l` is in first place with `r tp` points.  
-`r GWleader$Player` scored highest in gameweek `r GWleader$Gameweek`, with `r GWleader$Gameweek_points` points.  
+`r ifelse(length(GWleader$Player)==1,GWleader$Player,paste0(GWleader[1,"Player"]," and ", GWleader[2,"Player"] )) ` scored highest in gameweek `r max(GWleader$Gameweek)`, with `r max(GWleader$Gameweek_points)` points.  
 
 ##Charts
 
